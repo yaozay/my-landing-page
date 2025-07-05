@@ -98,7 +98,7 @@ export default function HeroSection() {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-cyan-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             <Image
-              src="/profile-photo.png"
+              src="/yahya.heic"
               alt="Yahya Ozay"
               width={350}
               height={350}
