@@ -3,9 +3,32 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Users } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function HeroSection() {
+  const [visitorCount, setVisitorCount] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Get current visitor count from localStorage
+    const currentCount = localStorage.getItem('visitorCount')
+    const hasVisited = sessionStorage.getItem('hasVisited')
+    
+    if (!hasVisited) {
+      // New visitor - increment count
+      const newCount = currentCount ? parseInt(currentCount) + 1 : 1
+      localStorage.setItem('visitorCount', newCount.toString())
+      sessionStorage.setItem('hasVisited', 'true')
+      setVisitorCount(newCount)
+    } else {
+      // Returning visitor in same session - just show count
+      setVisitorCount(currentCount ? parseInt(currentCount) : 1)
+    }
+    
+    setIsLoading(false)
+  }, [])
+
   return (
     <section id="hero" className="container py-24 md:py-32">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -30,6 +53,31 @@ export default function HeroSection() {
             I build elegant, efficient, and scalable web applications, transforming complex problems into beautiful,
             intuitive digital experiences.
           </p>
+          
+          {/* Visitor Counter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex items-center gap-3 pt-2"
+          >
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+              <Users className="h-4 w-4 text-purple-600" />
+              <span className="text-sm font-medium">
+                {isLoading ? (
+                  <span className="animate-pulse">Loading...</span>
+                ) : (
+                  <>
+                    <span className="text-muted-foreground">You are my visitor number: </span>
+                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold">
+                      {visitorCount.toLocaleString()}
+                    </span>
+                  </>
+                )}
+              </span>
+            </div>
+          </motion.div>
+
           <div className="flex gap-4 pt-4">
             <Button asChild size="lg" className="group">
               <Link href="#projects">
@@ -59,7 +107,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
       </div>
-      
       <style jsx>{`
         @keyframes gradient-x {
           0%, 100% {
@@ -69,7 +116,6 @@ export default function HeroSection() {
             background-position: 100% 50%;
           }
         }
-        
         .animate-gradient-x {
           animation: gradient-x 3s ease infinite;
         }

@@ -56,10 +56,10 @@ export const projects: Project[] = [
     title: "PopReel (TikTok Clone)",
     description:
       "Engineered a social video app with Clerk auth, real-time feeds, and AWS S3 storage; implemented a Prisma/PostgreSQL backend and Tailwind-responsive UI.",
-    image: "/project-popreel.png",
-    tags: ["TypeScript", "Next.js", "AWS S3", "Prisma", "Tailwind CSS", "Clerk"],
-    github: "https://github.com/yaozay/popreel",
-    liveDemo: "https://pop-reel.vercel.app",
+    image: "/popreel.png",
+    tags: ["TypeScript", "Next.js", "AWS S3", "Prisma", "Tailwind CSS", "Clerk",],
+    github: "https://github.com/yaozay/PopReel",
+    liveDemo: "https://www.loom.com/share/9fbb7d10d6f6414e94ce250072b5afc9?sid=4e72c292-c1e4-4d4c-8f11-4c61b144d059",
   },
 ]
 
