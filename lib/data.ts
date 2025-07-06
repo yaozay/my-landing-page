@@ -6,30 +6,34 @@ export const skills: {
   tools: Skill[]
 } = {
   languages: [
-    { name: "JavaScript", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Python", level: 85 },
+    { name: "JavaScript", level: 90 },
+    { name: "TypeScript", level: 95 },
+    { name: "Python", level: 100 },
     { name: "SQL", level: 80 },
     { name: "C++", level: 75 },
-    { name: "Java", level: 70 },
+    { name: "Java", level: 65 },
+    { name: "R", level: 60 },
   ],
   frameworks: [
-    { name: "React / Next.js", level: 95 },
-    { name: "FastAPI", level: 90 },
+    { name: "pandas", level: 95 },
     { name: "PyTorch", level: 85 },
     { name: "TensorFlow", level: 80 },
+    { name: "LoRa/QLoRa Fine-Tuning", level: 90 },
+    { name: "RAG pipelines", level: 90 },
+    { name: "Pinecone", level: 90 },
+    { name: "ChromaDB", level: 70 },    
   ],
   tools: [
-    { name: "Supabase", level: 90 },
-    { name: "Docker", level: 85 },
+    { name: "React/Next.js", level: 100 },
     { name: "AWS", level: 80 },
-    { name: "Git & CI/CD", level: 95 },
+    { name: "Docker", level: 80 },
+    { name: "Git & CI/CD", level: 100 },
     { name: "Postman", level: 75 },
     { name: "Linux", level: 80 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "Figma", level: 70 },
-    { name: "Pinecone", level: 85 },
-    { name: "ChromaDB", level: 80 },
+    { name: "FastAPI", level: 95 },
+    { name: "Supabase", level: 95 },
+    { name: "Figma", level: 90 },
+  
   ],
 }
 

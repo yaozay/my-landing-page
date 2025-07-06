@@ -28,8 +28,9 @@ export default function ContactSection() {
   useEffect(() => {
     if (state.message === "success") {
       toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+        title: "Thanks for your message!",
+        description: "I'll reach out to you soon.",
+        duration: 5000,
       })
     } else if (state.message === "error") {
       toast({

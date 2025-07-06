@@ -8,8 +8,8 @@ import { Code, Database, Server } from "lucide-react"
 
 const skillCategories = [
   { name: "Languages", icon: <Code className="h-6 w-6" />, skills: skills.languages },
-  { name: "Frameworks & Libraries", icon: <Server className="h-6 w-6" />, skills: skills.frameworks },
-  { name: "Databases & Tools", icon: <Database className="h-6 w-6" />, skills: skills.tools },
+  { name: "AI/ML", icon: <Server className="h-6 w-6" />, skills: skills.frameworks },
+  { name: "Frameworks/Tools", icon: <Database className="h-6 w-6" />, skills: skills.tools },
 ]
 
 export default function SkillsSection() {
