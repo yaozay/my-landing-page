@@ -46,7 +46,7 @@ export async function submitContactForm(
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "Contact Form <noreply@yourdomain.com>", // Replace with your verified domain
+      from: "Contact Form <noreply@yahyaozay.com>", // Replace with your verified domain
       to: ["yahyaozay1905@gmail.com"], // Replace with your email
       replyTo: email, // This allows you to reply directly to the sender
       subject: `New Contact Form Message from ${name}`,
