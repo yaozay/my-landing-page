@@ -1,8 +1,9 @@
 "use client"
 
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { FaGithub, FaLinkedin } from "react-icons/fa" 
+import Link from 'next/link'
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -26,14 +27,26 @@ export default function Header() {
             Yahya Ozay
           </span>
         </Link>
-        <nav className="hidden md:flex items-center space-x-1 bg-secondary/50 border border-border/30 rounded-full px-2 py-1">
-          {navLinks.map((link) => (
-            <Button key={link.href} asChild variant="ghost" className="rounded-full">
-              <Link href={link.href}>{link.label}</Link>
-            </Button>
-          ))}
-        </nav>
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center space-x-4">
+          {/* GitHub Link */}
+          <a
+            href="https://github.com/yaozay"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaGithub />
+          </a>
+          {/* LinkedIn Link */}
+          <a
+            href="https://linkedin.com/in/yahyaozay"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaLinkedin />
+          </a>
+          {/* Download Résumé Button */}
           <Button asChild className="rounded-full shadow-lg shadow-primary/20">
             <a href="/resume.pdf" download>
               Download Résumé
